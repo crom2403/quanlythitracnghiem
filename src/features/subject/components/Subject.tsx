@@ -20,6 +20,7 @@ import {
 } from "../../../components/ui/pagination"
 import { useState } from "react"
 import PopupAddSubject from "./PopupAddSubject"
+import PopupDetailSubject from "./PopupDetailSubject"
 
 const mockdata = [
   {
@@ -67,9 +68,21 @@ const mockdata = [
 const Subject = () => {
   const [isAddSubjectModalOpen, setIsAddSubjectModalOpen] = useState<boolean>(false)
   //   const [isEditSubjectModalOpen, setIsEditSubjectModalOpen] = useState(false)
+  const [idDetailSubject, setIdDetailSubject] = useState<string | null>(null)
+  const [isShowDetailSubject, setIsShowDetailSubject] = useState<boolean>(false)
+
+  const handleShowDetailSubject = (id: string) => {
+    setIdDetailSubject(id)
+    setIsShowDetailSubject(true)
+  }
 
   return (
     <>
+      <PopupDetailSubject
+        idDetailSubject={idDetailSubject}
+        isShowDetailSubject={isShowDetailSubject}
+        setIsShowDetailSubject={setIsShowDetailSubject}
+      />
       <div className="w-full min-h-[560px] bg-white rounded-md p-4">
         <div className="flex justify-between items-center">
           <h1 className="text-lg font-semibold">Danh sách môn học</h1>
@@ -109,7 +122,10 @@ const Subject = () => {
                   <TableCell className="text-center">{item.theory_hours}</TableCell>
                   <TableCell className="text-center">{item.practical_hours}</TableCell>
                   <TableCell className="text-center">
-                    <Button className="p-2 bg-gray-100 text-black mr-2 hover:bg-gray-200">
+                    <Button
+                      onClick={() => handleShowDetailSubject(item.public_id)}
+                      className="p-2 bg-gray-100 text-black mr-2 hover:bg-gray-200"
+                    >
                       <Info />
                     </Button>
                     <Button className="p-2 bg-gray-100 text-black mr-2 hover:bg-gray-200">

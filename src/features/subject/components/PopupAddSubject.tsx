@@ -101,11 +101,7 @@ const PopupAddSubject = ({
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>
-                          <Input
-                            className="bg-slate-100"
-                            placeholder="Nhập mã môn học"
-                            {...field}
-                          />
+                          <Input className="bg-gray-100" placeholder="Nhập mã môn học" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -121,7 +117,7 @@ const PopupAddSubject = ({
                       <FormItem>
                         <FormControl>
                           <Input
-                            className="bg-slate-100"
+                            className="bg-gray-100"
                             placeholder="Nhập tên môn học"
                             {...field}
                           />
@@ -139,11 +135,7 @@ const PopupAddSubject = ({
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>
-                          <Input
-                            className="bg-slate-100"
-                            placeholder="Nhập số tín chỉ"
-                            {...field}
-                          />
+                          <Input className="bg-gray-100" placeholder="Nhập số tín chỉ" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -160,7 +152,7 @@ const PopupAddSubject = ({
                         <FormItem>
                           <FormControl>
                             <Input
-                              className="bg-slate-100"
+                              className="bg-gray-100"
                               placeholder="Nhập số tiết lý thuyết"
                               {...field}
                             />
@@ -179,7 +171,7 @@ const PopupAddSubject = ({
                         <FormItem>
                           <FormControl>
                             <Input
-                              className="bg-slate-100"
+                              className="bg-gray-100"
                               placeholder="Nhập số tiết thực hành"
                               {...field}
                             />
