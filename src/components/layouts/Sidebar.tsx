@@ -1,5 +1,6 @@
 import { sidebar_admin } from "../../configs/constants"
 import { SidebarItem } from "../../types/common"
+import { Link } from "react-router-dom"
 
 const Sidebar = () => {
   return (
@@ -22,7 +23,8 @@ const Sidebar = () => {
                 <p className="font-semibold text-gray-500 text-md">{items.group}</p>
                 {items.items.map((item, index) => {
                   return (
-                    <div
+                    <Link
+                      to={item.to}
                       key={index}
                       className="flex items-center p-2 hover:bg-gray-100 rounded-sm cursor-pointer"
                     >
@@ -30,7 +32,7 @@ const Sidebar = () => {
                         <div className="flex size-5 text-blue-800">{item.icon}</div>
                       </div>
                       <div className="text-md">{item.title}</div>
-                    </div>
+                    </Link>
                   )
                 })}
               </div>
