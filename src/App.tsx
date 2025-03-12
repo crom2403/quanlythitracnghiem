@@ -5,6 +5,8 @@ import Login from "./components/login/Login"
 import Home from "./features/home/components/Home"
 import User from "./features/users/components/User"
 import Subject from "./features/subject/components/Subject"
+import { Toaster } from "sonner"
+
 function App() {
   return (
     <div className="container mx-auto">
@@ -23,6 +25,7 @@ function App() {
           </Routes>
         </Router>
       </div>
+      <Toaster position="top-center" expand={false} richColors />
     </div>
   )
 }

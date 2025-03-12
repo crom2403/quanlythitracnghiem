@@ -1,18 +1,17 @@
 import { sidebar_admin } from "../../configs/constants"
 import { SidebarItem } from "../../types/common"
 import { Link } from "react-router-dom"
+import LogoSTU from "../../assets/images/Logo_STU.png"
 
 const Sidebar = () => {
   return (
     <div className="w-full h-screen flex flex-col m-0 p-0">
-      <div className="h-16 bg-blue-800 flex justify-between p-4">
-        <div>
-          <p className="font-bold text-white">STU Test</p>
-        </div>
-        <div>
-          <button className="text-white">
-            <i className="fas fa-bars"></i>
-          </button>
+      <div className="h-16 bg-blue-800 flex items-center px-2">
+        <div className="text-2xl font-bold flex gap-1">
+          <img src={LogoSTU} alt="Logo STU" className="w-16" />
+          <div className="text-white flex flex-col justify-end">
+            <p className="">Test</p>
+          </div>
         </div>
       </div>
       <div>
