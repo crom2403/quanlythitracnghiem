@@ -6,6 +6,7 @@ import Home from "./features/home/components/Home"
 import User from "./features/users/components/User"
 import Subject from "./features/subject/components/Subject"
 import { Toaster } from "sonner"
+import Module from "./features/module/Module"
 
 function App() {
   return (
@@ -16,10 +17,10 @@ function App() {
             <Route path={path.LOGIN} element={<Login />} />
             <Route path={path.PUBLIC} element={<MainLayout />}>
               <Route path={path.HOME} element={<Home />} />
+              <Route path={path.MODULE} element={<Module />} />
               <Route path={path.SUBJECT} element={<Subject />} />
               <Route path={path.USER} element={<User />} />
               <Route path={path.TEST} element={<Home />} />
-              <Route path={path.MODULE} element={<Home />} />
               <Route path={path.QUESTION} element={<Home />} />
             </Route>
           </Routes>

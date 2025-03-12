@@ -44,7 +44,7 @@ export const sidebar_admin = [
       {
         icon: <AlignStartVertical />,
         title: "Nhóm học phần",
-        to: path.GROUP_SUBJECT,
+        to: path.MODULE,
       },
       {
         icon: <CircleHelp />,
