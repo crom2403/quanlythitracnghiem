@@ -3,7 +3,7 @@ const path = {
   HOME: "",
   LOGIN: "/login",
   MODULE: "/module",
-  MODULE_DETAIL: "/module/detail",
+  MODULE_DETAIL: "/module/detail/:id",
   QUESTION: "/question",
   USER: "/user",
   SUBJECT: "/subject",

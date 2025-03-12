@@ -14,6 +14,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../../components/ui/dropdown-menu"
+import { Link } from "react-router-dom"
+import path from "../../utils/path"
 
 const mockData = [
   {
@@ -101,9 +103,11 @@ const Module = () => {
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem>
-                          <Info /> Danh sách sinh viên
-                        </DropdownMenuItem>
+                        <Link to={`/module/detail/${group.id}`}>
+                          <DropdownMenuItem>
+                            <Info /> Danh sách sinh viên
+                          </DropdownMenuItem>
+                        </Link>
                         <DropdownMenuItem>
                           <Pencil /> Sửa thông tin
                         </DropdownMenuItem>
