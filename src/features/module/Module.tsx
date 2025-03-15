@@ -15,7 +15,6 @@ import {
   DropdownMenuTrigger,
 } from "../../components/ui/dropdown-menu"
 import { Link } from "react-router-dom"
-import path from "../../utils/path"
 
 const mockData = [
   {
