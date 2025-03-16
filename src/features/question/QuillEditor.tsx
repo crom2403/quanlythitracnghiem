@@ -1,8 +1,6 @@
-// src/components/QuillEditor.tsx
 import React, { useState, useEffect } from "react"
 import ReactQuill from "react-quill"
 import "react-quill/dist/quill.snow.css"
-import { Card, CardContent } from "../../components/ui/card"
 import { Label } from "../../components/ui/label"
 
 // Định nghĩa kiểu props cho component
@@ -51,25 +49,31 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
     onChange(content)
   }
 
+  // Tắt kiểm tra chính tả cho editor
+  useEffect(() => {
+    // Tìm element của Quill editor sau khi nó được render
+    const quillEditor = document.querySelector(".ql-editor")
+    if (quillEditor) {
+      // Tắt kiểm tra chính tả
+      quillEditor.setAttribute("spellcheck", "false")
+    }
+  }, [])
+
   return (
-    <div className={`w-full ${className}`}>
+    <div className={`flex flex-col w-full h-full ${className}`}>
       {label && <Label className="mb-2 block">{label}</Label>}
-      <Card className="border border-gray-200">
-        <CardContent className="p-0">
-          <ReactQuill
-            theme="snow"
-            value={editorValue}
-            onChange={handleChange}
-            modules={modules}
-            formats={formats}
-            placeholder={placeholder}
-            style={{
-              height: height,
-              borderRadius: "0.375rem",
-            }}
-          />
-        </CardContent>
-      </Card>
+      <ReactQuill
+        theme="snow"
+        value={editorValue}
+        onChange={handleChange}
+        modules={modules}
+        formats={formats}
+        placeholder={placeholder}
+        style={{
+          height: height,
+          borderRadius: "0.375rem",
+        }}
+      />
     </div>
   )
 }

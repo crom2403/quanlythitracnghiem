@@ -18,7 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../components/ui/select"
-import FormWithEditor from "./FormWithEditor"
+import PopupAddQuestion from "./PopupAddQuestion"
 
 const mockData = [
   {
@@ -53,6 +53,7 @@ const mockData = [
 
 const Question = () => {
   const [selectSubject, setSelectSubject] = useState("")
+  const [isOpenPopup, setIsOpenPopup] = useState(false)
   const listSubject = [
     {
       id: 1,
@@ -77,15 +78,10 @@ const Question = () => {
 
   return (
     <div>
-      <div className="w-full flex justify-between">
-        <FormWithEditor />
-      </div>
       <div className="w-full bg-white p-4 rounded-md shadow-sm">
         <div className="flex items-center justify-between">
           <p className="font-medium">Tất cả câu hỏi</p>
-          <Button className="bg-blue-800 text-white">
-            <Plus /> Thêm câu hỏi mới
-          </Button>
+          <PopupAddQuestion isOpen={isOpenPopup} handleOpen={setIsOpenPopup} />
         </div>
         <div className="flex gap-4 items-center mt-4">
           <Select value={selectSubject} onValueChange={() => setSelectSubject}>
