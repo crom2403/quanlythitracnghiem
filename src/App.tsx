@@ -8,6 +8,7 @@ import Subject from "./features/subject/components/Subject"
 import { Toaster } from "sonner"
 import Module from "./features/module/Module"
 import ModuleDetail from "./features/module/ModuleDetail"
+import Question from "./features/question/Question"
 
 function App() {
   return (
@@ -20,10 +21,10 @@ function App() {
               <Route path={path.HOME} element={<Home />} />
               <Route path={path.MODULE} element={<Module />} />
               <Route path={path.MODULE_DETAIL} element={<ModuleDetail />} />
+              <Route path={path.QUESTION} element={<Question />} />
               <Route path={path.SUBJECT} element={<Subject />} />
               <Route path={path.USER} element={<User />} />
               <Route path={path.TEST} element={<Home />} />
-              <Route path={path.QUESTION} element={<Home />} />
             </Route>
           </Routes>
         </Router>

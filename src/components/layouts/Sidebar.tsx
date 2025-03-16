@@ -19,7 +19,7 @@ const Sidebar = () => {
           {sidebar_admin.map((items: SidebarItem, index) => {
             return (
               <div key={index} className="pb-4">
-                <p className="font-semibold text-gray-500 text-md">{items.group}</p>
+                <p className="font-semibold text-gray-700 text-sm">{items.group}</p>
                 {items.items.map((item, index) => {
                   return (
                     <Link
@@ -30,7 +30,7 @@ const Sidebar = () => {
                       <div className="mr-2">
                         <div className="flex size-5 text-blue-800">{item.icon}</div>
                       </div>
-                      <div className="text-md">{item.title}</div>
+                      <div className="text-sm">{item.title}</div>
                     </Link>
                   )
                 })}

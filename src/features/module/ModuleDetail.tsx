@@ -20,7 +20,7 @@ const ModuleDetail = () => {
     <div>
       <div className="w-full flex justify-between">
         <div className="flex items-center">
-          <Button className="px-[10px] border border-r-0 rounded-e-none bg-white text-black hover:bg-slate-50">
+          <Button className="shadow-sm px-[10px] border border-r-0 rounded-e-none bg-white text-black hover:bg-slate-50">
             <Search className="size-2" />
           </Button>
           <Input

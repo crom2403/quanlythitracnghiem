@@ -52,7 +52,7 @@ export const sidebar_admin = [
         to: path.QUESTION,
       },
       {
-        icon: <CircleHelp />,
+        icon: <Users />,
         title: "Người dùng",
         to: path.USER,
       },
