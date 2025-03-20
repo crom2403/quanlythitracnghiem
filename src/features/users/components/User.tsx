@@ -27,6 +27,8 @@ import {
   SelectValue,
 } from "../../../components/ui/select"
 import { Input } from "../../../components/ui/input"
+import PopupAddStudent from "./PopupAddStudent"
+import { useState } from "react"
 
 const mockdata = [
   {
@@ -76,15 +78,16 @@ const mockdata = [
 ]
 
 const User = () => {
+  const [isAddStudentModalOpen, setIsAddStudentModalOpen] = useState<boolean>(false)
   return (
     <>
       <div className="w-full min-h-[560px] bg-white rounded-md p-4">
         <div className="flex justify-between items-center">
           <h1 className="text-lg font-semibold">Tất cả người dùng</h1>
-          <Button>
-            <Plus />
-            Thêm người dùng
-          </Button>
+          <PopupAddStudent
+            isAddStudentModalOpen={isAddStudentModalOpen}
+            setIsAddStudentModalOpen={setIsAddStudentModalOpen}
+          />
         </div>
         <div className="relative my-6">
           <div className="max-w-[300px] flex items-center">
