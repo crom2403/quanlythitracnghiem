@@ -1,10 +1,10 @@
+/* eslint-disable prefer-const */
 import axios from "axios"
-// import useAuthStore from "~/stores/authStore"
+import path from "../utils/path"
+import useAuthStore from "../stores/authStore"
 
-// eslint-disable-next-line prefer-const
 let instance = axios.create()
-const serverUrl = import.meta.env.VITE_SERVER_URL
-instance.defaults.baseURL = serverUrl
+instance.defaults.baseURL = path.SERVER_URL
 
 // Thời gian chờ tối đa của 1 request : để 10 phút
 instance.defaults.timeout = 1000 * 60 * 10
@@ -42,8 +42,8 @@ instance.interceptors.response.use(
         originalRequest.headers.Authorization = `Bearer ${data.accessToken}`
         return instance(originalRequest)
       } catch (refreshError) {
-        // const { logout } = useAuthStore()
-        // logout()
+        const { logout } = useAuthStore()
+        logout()
         return Promise.reject(refreshError)
       }
     }

@@ -10,6 +10,8 @@ import { Plus, TriangleAlert } from "lucide-react"
 import { apiLogin } from "../../services/auth"
 import { useNavigate } from "react-router-dom"
 import { toast } from "sonner"
+import useAuthStore from "../../stores/authStore"
+import path from "../../utils/path"
 
 const formSchema = z.object({
   student_code: z.string().min(1, {
@@ -20,6 +22,7 @@ const formSchema = z.object({
   }),
 })
 const Login = () => {
+  const login = useAuthStore((state) => state.login)
   const navigate = useNavigate()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -34,11 +37,15 @@ const Login = () => {
       const response = await apiLogin(values)
       console.log(response)
       if (response.status === 201) {
-        localStorage.setItem("accessToken", response.data.accessToken)
-        localStorage.setItem("refreshToken", response.data.refreshToken)
+        await login(response.data)
+        console.log("✅ Zustand current state:", useAuthStore.getState())
+
         toast.success("Đăng nhập thành công")
         form.reset()
-        navigate("/")
+        if (response.data.role.name === "student") navigate(path.STUDENT.OVERVIEW)
+        else if (response.data.role.name === "teacher") navigate(path.TEACHER.OVERVIEW)
+        else if (response.data.role.name === "admin") navigate(path.ADMIN.OVERVIEW)
+        else navigate(path.HOME)
       }
     } catch (error: any) {
       toast.error(error?.response.data.message)

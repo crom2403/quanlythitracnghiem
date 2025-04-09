@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Plus } from "lucide-react"
 import { Button } from "../../../components/ui/button"
 import { Dialog, DialogContent, DialogTrigger } from "../../../components/ui/dialog"

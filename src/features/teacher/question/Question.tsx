@@ -1,6 +1,6 @@
 import { Pencil, Search, X } from "lucide-react"
-import { Button } from "../../components/ui/button"
-import { Input } from "../../components/ui/input"
+import { Button } from "../../../components/ui/button"
+import { Input } from "../../../components/ui/input"
 import {
   Table,
   TableBody,
@@ -9,7 +9,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../components/ui/table"
+} from "../../../components/ui/table"
 import { useState } from "react"
 import {
   Select,
@@ -17,7 +17,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../components/ui/select"
+} from "../../../components/ui/select"
 import PopupAddQuestion from "./PopupAddQuestion"
 
 const mockData = [

@@ -1,9 +1,13 @@
-import { sidebar_admin } from "../../configs/constants"
+import { sidebar_admin, sidebar_student, sidebar_teacher } from "../../configs/constants"
 import { SidebarItem } from "../../types/common"
 import { Link } from "react-router-dom"
 import LogoSTU from "../../assets/images/Logo_STU.png"
+import useAuthStore from "../../stores/authStore"
 
 const Sidebar = () => {
+  const role = useAuthStore((state) => state.currentUser)?.role.name
+  const sitebar =
+    role === "admin" ? sidebar_admin : role === "teacher" ? sidebar_teacher : sidebar_student
   return (
     <div className="w-full h-screen flex flex-col m-0 p-0">
       <div className="h-16 bg-blue-800 flex items-center px-2">
@@ -16,7 +20,7 @@ const Sidebar = () => {
       </div>
       <div>
         <div className="p-4">
-          {sidebar_admin.map((items: SidebarItem, index) => {
+          {sitebar.map((items: SidebarItem, index) => {
             return (
               <div key={index} className="pb-4">
                 <p className="font-semibold text-gray-700 text-sm">{items.group}</p>

@@ -2,16 +2,16 @@ import { useState, useEffect } from "react"
 
 import DOMPurify from "dompurify"
 import QuillEditor from "./QuillEditor"
-import { Button } from "../../components/ui/button"
+import { Button } from "../../../components/ui/button"
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../../components/ui/dialog"
+} from "../../../components/ui/dialog"
 import { ChevronDown, Download, File, Pencil, Plus, Trash, Upload } from "lucide-react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs"
 
 import {
   Select,
@@ -19,14 +19,14 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../components/ui/select"
-import { Label } from "../../components/ui/label"
+} from "../../../components/ui/select"
+import { Label } from "../../../components/ui/label"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../components/ui/accordion"
+} from "../../../components/ui/accordion"
 import {
   Table,
   TableBody,
@@ -34,10 +34,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../components/ui/table"
-import { Input } from "../../components/ui/input"
+} from "../../../components/ui/table"
+import { Input } from "../../../components/ui/input"
 import { toast } from "sonner"
-import { Alert, AlertDescription } from "../../components/ui/alert"
+import { Alert, AlertDescription } from "../../../components/ui/alert"
 import * as XLSX from "xlsx"
 
 interface PopupAddQuestionProps {

@@ -2,13 +2,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import path from "./utils/path"
 import MainLayout from "./components/layouts/MainLayout"
 import Login from "./components/login/Login"
-import Home from "./features/home/components/Home"
-import User from "./features/users/components/User"
-import Subject from "./features/subject/components/Subject"
+import Home from "./components/home/Home"
 import { Toaster } from "sonner"
-import Module from "./features/module/Module"
-import ModuleDetail from "./features/module/ModuleDetail"
-import Question from "./features/question/Question"
+import User_Teacher from "./features/teacher/user/User"
+import Subject_Teacher from "./features/teacher/subject/Subject"
+import Module_Teacher from "./features/teacher/module/Module"
+import ModuleDetail_Teacher from "./features/teacher/module/ModuleDetail"
+import Question_Teacher from "./features/teacher/question/Question"
+import Overview_Teacher from "./features/teacher/overview/Overview"
 
 function App() {
   return (
@@ -17,14 +18,19 @@ function App() {
         <Router>
           <Routes>
             <Route path={path.LOGIN} element={<Login />} />
+            <Route path={path.HOME} element={<Home />} />
             <Route path={path.PUBLIC} element={<MainLayout />}>
-              <Route path={path.HOME} element={<Home />} />
-              <Route path={path.MODULE} element={<Module />} />
-              <Route path={path.MODULE_DETAIL} element={<ModuleDetail />} />
-              <Route path={path.QUESTION} element={<Question />} />
-              <Route path={path.SUBJECT} element={<Subject />} />
-              <Route path={path.USER} element={<User />} />
-              <Route path={path.TEST} element={<Home />} />
+              {/* Các Routes của Teacher */}
+              <Route path={path.TEACHER.OVERVIEW} element={<Overview_Teacher />} />
+              <Route path={path.TEACHER.MODULE} element={<Module_Teacher />} />
+              <Route
+                path={`${path.TEACHER.MODULE_DETAIL}/:id`}
+                element={<ModuleDetail_Teacher />}
+              />
+              <Route path={path.TEACHER.QUESTION} element={<Question_Teacher />} />
+              <Route path={path.TEACHER.SUBJECT} element={<Subject_Teacher />} />
+              <Route path={path.TEACHER.USER} element={<User_Teacher />} />
+              {/* <Route path={path.TEST} element={<Home />} /> */}
             </Route>
           </Routes>
         </Router>

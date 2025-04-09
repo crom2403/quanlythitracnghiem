@@ -1,7 +1,7 @@
 import { Copy, FileUp, Plus, RefreshCcw } from "lucide-react"
-import { Button } from "../../components/ui/button"
-import { Dialog, DialogContent, DialogTrigger } from "../../components/ui/dialog"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { Button } from "../../../components/ui/button"
+import { Dialog, DialogContent, DialogTrigger } from "../../../components/ui/dialog"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -12,8 +12,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../../components/ui/form"
-import { Input } from "../../components/ui/input"
+} from "../../../components/ui/form"
+import { Input } from "../../../components/ui/input"
 import { useRef, useState } from "react"
 
 const formAddStudentManualSchema = z.object({
